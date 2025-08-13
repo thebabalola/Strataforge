@@ -1,0 +1,11 @@
+{
+  "DeployStrataForgeCoreTestnet#StrataForgeAdmin": "0x5D9269F7f50e67Ed8d85D7DB2d60FF268cFE8Fe2",
+  "DeployStrataForgeCoreTestnet#StrataForgeERC1155Implementation": "0x0961000b7061758F60b2312294Dad217d7837D8a",
+  "DeployStrataForgeCoreTestnet#StrataForgeERC20Implementation": "0xfeE213852bc5B397ABB4B4175a8070dd688d47ef",
+  "DeployStrataForgeCoreTestnet#StrataForgeERC721Implementation": "0x2d9943009279e05536F3C303e1646e03279f5c1E",
+  "DeployStrataForgeCoreTestnet#StrataForgeMemecoinImplementation": "0x9DCc99108E8f321a0Ec95E35Be221b189fC82C6e",
+  "DeployStrataForgeCoreTestnet#StrataForgeStablecoinImplementation": "0x99A6978d83fC6Eaff21B546bEc8fa6F1DD6e5BC5",
+  "DeployStrataForgeCoreTestnet#StrataForgeAirdropFactory": "0x5b0Af69087324A6d814FF292708bb48c77224266",
+  "DeployStrataForgeCoreTestnet#StrataForgeProxyFactory": "0xeaBCdbCfd2ce35E1384BD4f1C2977E4f87e6abd3",
+  "DeployStrataForgeCoreTestnet#StrataForgeFactory": "0x186DA393c17630e0aD508af67Fc8A3C38393911e"
+}

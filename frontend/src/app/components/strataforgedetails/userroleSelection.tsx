@@ -52,6 +52,7 @@ export default function TokenPlatformRoleSelection() {
       bgGradient: 'from-blue-500/20 to-cyan-500/20',
       borderColor: 'border-blue-500/30',
     },
+
   ];
 
   return (
@@ -147,6 +148,15 @@ export default function TokenPlatformRoleSelection() {
 
           <p className='text-sm text-gray-500 text-center max-w-md'>
             You will be taken directly to your dashboard. You can switch between roles anytime from your dashboard settings.
+          </p>
+          
+          <p className='text-sm text-gray-400 text-center'>
+            <span 
+              onClick={() => router.push('/dashboard/admin')}
+              className='underline cursor-pointer hover:text-white transition-colors'
+            >
+              If admin, access the admin dashboard
+            </span>
           </p>
         </div>
       </div>

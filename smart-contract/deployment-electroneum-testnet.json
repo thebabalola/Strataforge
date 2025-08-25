@@ -1,0 +1,17 @@
+{
+  "network": "Electroneum Testnet",
+  "chainId": 5201420,
+  "deployer": "0x0eE1F2b663547dAa487F57C517C7563AdCf86da0",
+  "contracts": {
+    "StrataForgeAdmin": "0xFb8B95b90C19990EBe64741e35EACDbE0Fd30bcf",
+    "StrataForgeERC20Implementation": "0xaf23a66689e55f08B24271Ce2dB6c5522F666d05",
+    "StrataForgeERC721Implementation": "0xfaF064467DF1c72f93b48956C11D92359d5a3f99",
+    "StrataForgeERC1155Implementation": "0x036Cf39BA8CbcBfEa786C9d1d34009208ED57D74",
+    "StrataForgeMemecoinImplementation": "0x4eB7bba93734533350455B50056c33e93DD86493",
+    "StrataForgeStablecoinImplementation": "0x0b5870D52E5b0b2dDD75a66BC124DF350643C682",
+    "StrataForgeProxyFactory": "0xFe9fDE126C4aE4Be8A6D4F1Da284611935726920",
+    "StrataForgeFactory": "0xf28B02EDAe285B30FB9d7a9d78138ac982C5a08B",
+    "StrataForgeAirdropFactory": "0xD9bC090b10c0323E672e9e7F3A9E4394650ED472"
+  },
+  "deploymentDate": "2025-08-25T12:01:31.066Z"
+}

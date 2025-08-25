@@ -268,7 +268,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 🔄 Version History
 
 - **v1.0.0** - Initial release with Electroneum testnet deployment
-- **v0.9.0** - Beta release with Core testnet support
+- **v0.9.0** - Beta release with Electroneum testnet support
 - **v0.8.0** - Alpha release with basic token creation features
 
 ---

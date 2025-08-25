@@ -22,8 +22,12 @@ export default function TokenPlatformRoleSelection() {
       localStorage.setItem('userRole', backendRole);
       console.log(`Selected role: ${backendRole}`);
 
-      // Redirect to registration
-      router.push('/user-registration');
+      // Route directly to appropriate dashboard based on role
+      if (selectedRole === 'Owner') {
+        router.push('/dashboard/token-creator');
+      } else if (selectedRole === 'User') {
+        router.push('/dashboard/token-trader');
+      }
     }
   };
 
@@ -138,11 +142,11 @@ export default function TokenPlatformRoleSelection() {
               focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-black
             `}
           >
-            {selectedRole ? `Continue as ${selectedRole}` : 'Select a Role to Continue'}
+            {selectedRole ? `Go to ${selectedRole} Dashboard` : 'Select a Role to Continue'}
           </button>
 
           <p className='text-sm text-gray-500 text-center max-w-md'>
-            Don&apos t worry, you can switch between roles anytime from your dashboard settings.
+            You will be taken directly to your dashboard. You can switch between roles anytime from your dashboard settings.
           </p>
         </div>
       </div>

@@ -62,12 +62,17 @@ async function main() {
     "StrataForgeERC20Implementation"
   );
   const erc20Implementation = await retryOperation(async () => {
-    const contract = await StrataForgeERC20Implementation.deploy(gasSettings);
-    await contract.waitForDeployment();
-    return contract;
+    const tx = await StrataForgeERC20Implementation.deploy(gasSettings);
+    const receipt = await tx.waitForDeployment();
+    return receipt;
   });
   const erc20Address = await erc20Implementation.getAddress();
+  const erc20Tx = await erc20Implementation.deploymentTransaction();
   console.log("StrataForgeERC20Implementation deployed to:", erc20Address);
+  console.log("Waiting for 5 block confirmations...");
+  if (erc20Tx) {
+    await erc20Tx.wait(5);
+  }
 
   // Deploy ERC721 Implementation
   console.log("Deploying StrataForgeERC721Implementation...");
@@ -75,12 +80,17 @@ async function main() {
     "StrataForgeERC721Implementation"
   );
   const erc721Implementation = await retryOperation(async () => {
-    const contract = await StrataForgeERC721Implementation.deploy(gasSettings);
-    await contract.waitForDeployment();
-    return contract;
+    const tx = await StrataForgeERC721Implementation.deploy(gasSettings);
+    const receipt = await tx.waitForDeployment();
+    return receipt;
   });
   const erc721Address = await erc721Implementation.getAddress();
+  const erc721Tx = await erc721Implementation.deploymentTransaction();
   console.log("StrataForgeERC721Implementation deployed to:", erc721Address);
+  console.log("Waiting for 5 block confirmations...");
+  if (erc721Tx) {
+    await erc721Tx.wait(5);
+  }
 
   // Deploy ERC1155 Implementation
   console.log("Deploying StrataForgeERC1155Implementation...");
@@ -88,12 +98,17 @@ async function main() {
     "StrataForgeERC1155Implementation"
   );
   const erc1155Implementation = await retryOperation(async () => {
-    const contract = await StrataForgeERC1155Implementation.deploy(gasSettings);
-    await contract.waitForDeployment();
-    return contract;
+    const tx = await StrataForgeERC1155Implementation.deploy(gasSettings);
+    const receipt = await tx.waitForDeployment();
+    return receipt;
   });
   const erc1155Address = await erc1155Implementation.getAddress();
+  const erc1155Tx = await erc1155Implementation.deploymentTransaction();
   console.log("StrataForgeERC1155Implementation deployed to:", erc1155Address);
+  console.log("Waiting for 5 block confirmations...");
+  if (erc1155Tx) {
+    await erc1155Tx.wait(5);
+  }
 
   // Deploy Memecoin Implementation
   console.log("Deploying StrataForgeMemecoinImplementation...");
@@ -163,6 +178,9 @@ async function main() {
   const adminAddress = await adminContract.getAddress();
   console.log("StrataForgeAdmin deployed to:", adminAddress);
 
+  // Wait for block confirmation
+  await new Promise(resolve => setTimeout(resolve, 3000));
+
   // Deploy Main Factory
   console.log("Deploying StrataForgeFactory...");
   const StrataForgeFactory = await ethers.getContractFactory(
@@ -179,6 +197,9 @@ async function main() {
   });
   const factoryAddress = await factoryContract.getAddress();
   console.log("StrataForgeFactory deployed to:", factoryAddress);
+
+  // Wait for block confirmation
+  await new Promise(resolve => setTimeout(resolve, 3000));
 
   // Deploy Airdrop Factory
   console.log("Deploying StrataForgeAirdropFactory...");

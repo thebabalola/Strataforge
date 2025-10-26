@@ -100,11 +100,11 @@ const AirdropPlaceholderIcon = () => (
 );
 
 const FACTORY_CONTRACT_ADDRESS =
-  "0x65B7E0961160Abe5d49500CE834324B76b755762" as const;
+  "0x85941e2Dd3f3198Ce038A301650f4249EB7aCbb7" as const;
 const factoryABI = StrataForgeFactoryABI as Abi;
 
 const AIRDROP_CONTRACT_ADDRESS =
-  "0xAfA316A63DB6f9EE4F7fE975e110343a0c4c8205" as const;
+  "0x0dBc2Da0A46Ec616576b2C0f38DD911b1392EE0D" as const;
 const airdropFactoryABI = StrataForgeAirdropFactoryABI as Abi;
 
 interface Token {

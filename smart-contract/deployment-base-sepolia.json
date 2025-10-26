@@ -3,15 +3,15 @@
   "chainId": 84532,
   "deployer": "0x0eE1F2b663547dAa487F57C517C7563AdCf86da0",
   "contracts": {
-    "StrataForgeAdmin": "0x87a25cC6F42B194061f02382fee342001cBF9767",
-    "StrataForgeERC20Implementation": "0x092495997E0060E2b811A80d0b6c1c69aBCA7B3C",
-    "StrataForgeERC721Implementation": "0x264f64E0F7eAad68447c6536fFa816e802B4c26d",
-    "StrataForgeERC1155Implementation": "0x1EEaC20cd0C01bb7D85D4FB2AAE0bd502b03a5dA",
-    "StrataForgeMemecoinImplementation": "0xc4745695430aAc3ac2095375d37aD6D82EE8056A",
-    "StrataForgeStablecoinImplementation": "0x12746721fA858D3Bb0F81823Ee3B41c54C9b949b",
-    "StrataForgeProxyFactory": "0x96ae871091EBA6B8287f38A3FAA8B53BC5a9AC76",
-    "StrataForgeFactory": "0x65B7E0961160Abe5d49500CE834324B76b755762",
-    "StrataForgeAirdropFactory": "0xAfA316A63DB6f9EE4F7fE975e110343a0c4c8205"
+    "StrataForgeAdmin": "0xAf6AB6822A586Fece70ca4D2a7e9B34E968fE991",
+    "StrataForgeERC20Implementation": "0xDF31A5a8Bfd8dDe160eB4EE2482a2cd20E15F567",
+    "StrataForgeERC721Implementation": "0x7E2337cffe34Db29896436ee3Df4fA3B0b1Cc10F",
+    "StrataForgeERC1155Implementation": "0xc9859c8181F74f493dF807B054e1923F7C7Df430",
+    "StrataForgeMemecoinImplementation": "0x2EbE7f6911C9945c8695938eBD2A2951B5888A23",
+    "StrataForgeStablecoinImplementation": "0x09Cc713bBB130C4e41a105C4BDD999bD88F477f8",
+    "StrataForgeProxyFactory": "0x1439f896f771c69848b9DACcccDE7CCCf2b10AA1",
+    "StrataForgeFactory": "0x85941e2Dd3f3198Ce038A301650f4249EB7aCbb7",
+    "StrataForgeAirdropFactory": "0x0dBc2Da0A46Ec616576b2C0f38DD911b1392EE0D"
   },
-  "deploymentDate": "2025-10-26T17:23:02.632Z"
+  "deploymentDate": "2025-10-26T23:53:39.562Z"
 }

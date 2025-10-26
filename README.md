@@ -1,15 +1,15 @@
-# StrataForge - Electroneum Token Creation Platform
+# StrataForge - Base Token Creation Platform
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Electroneum](https://img.shields.io/badge/Blockchain-Electroneum-blue.svg)](https://electroneum.com)
+[![Base](https://img.shields.io/badge/Blockchain-Base-blue.svg)](https://base.org)
 [![Next.js](https://img.shields.io/badge/Next.js-15.3.1-black.svg)](https://nextjs.org/)
 [![Solidity](https://img.shields.io/badge/Solidity-0.8.26-orange.svg)](https://soliditylang.org/)
 
-Transform your vision into digital assets—without writing code. StrataForge empowers creators, entrepreneurs, and businesses to mint NFTs and launch tokens in minutes, with zero technical knowledge required, now powered by the Electroneum blockchain.
+Transform your vision into digital assets—without writing code. StrataForge empowers creators, entrepreneurs, and businesses to mint NFTs and launch tokens in minutes, with zero technical knowledge required, now powered by the Base blockchain.
 
 ## 🚀 Project Overview
 
-StrataForge is a comprehensive no-code token creation platform that enables users to deploy multiple token standards, manage campaigns, and handle whitelists—all without blockchain development expertise. The platform is specifically optimized for the Electroneum blockchain.
+StrataForge is a comprehensive no-code token creation platform that enables users to deploy multiple token standards, manage campaigns, and handle whitelists—all without blockchain development expertise. The platform is specifically optimized for the Base blockchain.
 
 ### Key Features
 
@@ -38,7 +38,7 @@ StrataForge is a comprehensive no-code token creation platform that enables user
 ## 📁 Project Structure
 
 ```
-Strataforge-electroneum/
+Strataforge-base/
 ├── frontend/                    # Next.js frontend application
 │   ├── src/
 │   │   ├── app/                # Next.js app router pages
@@ -70,7 +70,7 @@ Strataforge-electroneum/
 1. **Clone the repository**
    ```bash
    git clone https://github.com/thebabalola/Strataforge.git
-   cd Strataforge-electroneum
+   cd Strataforge-base
    ```
 
 2. **Install frontend dependencies**
@@ -89,11 +89,9 @@ Strataforge-electroneum/
    
    Create a `.env` file in the `smart-contract` directory:
    ```env
-   ELECTRONEUM_RPC_URL=your_electroneum_mainnet_rpc_url
-   ELECTRONEUM_TESTNET_RPC_URL=your_electroneum_testnet_rpc_url
-   PRIVATE_KEY=your_private_key
-   ANKR_API_KEY=your_ankr_api_key
-   ETHERSCAN_API_KEY=your_electroneum_blockexplorer_api_key
+   ACCOUNT_PRIVATE_KEY=your_private_key_here
+   BASE_SEPOLIA_RPC_URL=https://sepolia.base.org
+   BASESCAN_API_KEY=your_basescan_api_key_here
    ```
 
    Create a `.env.local` file in the `frontend` directory:
@@ -119,48 +117,40 @@ npx hardhat test
 
 ### Deployment
 
-#### Deploy to Electroneum Testnet
+#### Deploy to Base Sepolia Testnet
 ```bash
 cd smart-contract
-npx hardhat run scripts/deploy-strataforge.ts --network electroneum-testnet
-```
-
-#### Deploy to Electroneum Mainnet
-```bash
-cd smart-contract
-npx hardhat run scripts/deploy-strataforge.ts --network electroneum
+npx hardhat run scripts/deploy-strataforge.ts --network base-sepolia
 ```
 
 ## 🌐 Supported Networks
 
-- **Electroneum Mainnet** (Chain ID: 52014)
-- **Electroneum Testnet** (Chain ID: 5201420) ✅ **DEPLOYED**
+- **Base Sepolia Testnet** (Chain ID: 84532) ✅ **DEPLOYED**
 - Local Hardhat Network
 
 ## 📋 Deployed Contracts
 
-### Electroneum Testnet Deployment ✅ **LIVE**
+### Base Sepolia Testnet Deployment ✅ **LIVE**
 
-**Network:** Electroneum Testnet (Chain ID: 5201420)  
+**Network:** Base Sepolia Testnet (Chain ID: 84532)  
 **Deployer:** `0x0eE1F2b663547dAa487F57C517C7563AdCf86da0`  
-**Deployment Date:** August 25, 2025
+**Deployment Date:** October 26, 2025
 
 #### Core Contracts:
-- **StrataForgeAdmin:** `0xFb8B95b90C19990EBe64741e35EACDbE0Fd30bcf`
-- **StrataForgeFactory:** `0xf28B02EDAe285B30FB9d7a9d78138ac982C5a08B`
-- **StrataForgeAirdropFactory:** `0xD9bC090b10c0323E672e9e7F3A9E4394650ED472`
-- **StrataForgeProxyFactory:** `0xFe9fDE126C4aE4Be8A6D4F1Da284611935726920`
+- **StrataForgeAdmin:** `0x87a25cC6F42B194061f02382fee342001cBF9767`
+- **StrataForgeFactory:** `0x65B7E0961160Abe5d49500CE834324B76b755762`
+- **StrataForgeAirdropFactory:** `0xAfA316A63DB6f9EE4F7fE975e110343a0c4c8205`
+- **StrataForgeProxyFactory:** `0x96ae871091EBA6B8287f38A3FAA8B53BC5a9AC76`
 
 #### Token Implementations:
-- **StrataForgeERC20Implementation:** `0xaf23a66689e55f08B24271Ce2dB6c5522F666d05`
-- **StrataForgeERC721Implementation:** `0xfaF064467DF1c72f93b48956C11D92359d5a3f99`
-- **StrataForgeERC1155Implementation:** `0x036Cf39BA8CbcBfEa786C9d1d34009208ED57D74`
-- **StrataForgeMemecoinImplementation:** `0x4eB7bba93734533350455B50056c33e93DD86493`
-- **StrataForgeStablecoinImplementation:** `0x0b5870D52E5b0b2dDD75a66BC124DF350643C682`
+- **StrataForgeERC20Implementation:** `0x092495997E0060E2b811A80d0b6c1c69aBCA7B3C`
+- **StrataForgeERC721Implementation:** `0x264f64E0F7eAad68447c6536fFa816e802B4c26d`
+- **StrataForgeERC1155Implementation:** `0x1EEaC20cd0C01bb7D85D4FB2AAE0bd502b03a5dA`
+- **StrataForgeMemecoinImplementation:** `0xc4745695430aAc3ac2095375d37aD6D82EE8056A`
+- **StrataForgeStablecoinImplementation:** `0x12746721fA858D3Bb0F81823Ee3B41c54C9b949b`
 
 ### Block Explorer Links
-- **Testnet Explorer:** [https://testnet-blockexplorer.electroneum.com](https://testnet-blockexplorer.electroneum.com)
-- **Mainnet Explorer:** [https://blockexplorer.electroneum.com](https://blockexplorer.electroneum.com)
+- **Base Sepolia Explorer:** [https://sepolia.basescan.org](https://sepolia.basescan.org)
 
 ## 🎯 Platform Features
 
@@ -199,9 +189,9 @@ npx hardhat run scripts/deploy-strataforge.ts --network electroneum
 - **Deployment:** Ignition modules
 
 ### Infrastructure
-- **Blockchain:** Electroneum
-- **RPC Provider:** Ankr
-- **Block Explorer:** Electroneum Block Explorer
+- **Blockchain:** Base
+- **RPC Provider:** Base Sepolia RPC
+- **Block Explorer:** Base Sepolia Explorer
 - **Deployment:** Manual deployment with Hardhat
 
 ## 🧪 Testing
@@ -237,7 +227,7 @@ npx hardhat compile
 - All contracts are tested and audited for security
 - Anti-whale and collateralization features available
 - Whitelist and campaign management ensure fair distribution
-- Gas optimization for Electroneum network compatibility
+- Gas optimization for Base network compatibility
 
 ## 🤝 Contributing
 
@@ -253,7 +243,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 🌟 Acknowledgments
 
-- [Electroneum](https://electroneum.com) for blockchain infrastructure
+- [Base](https://base.org) for blockchain infrastructure
 - [OpenZeppelin](https://openzeppelin.com) for secure smart contract libraries
 - [Next.js](https://nextjs.org) for the frontend framework
 - [Wagmi](https://wagmi.sh) for Web3 React hooks
@@ -267,10 +257,11 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 🔄 Version History
 
+- **v1.1.0** - Base Sepolia testnet deployment
 - **v1.0.0** - Initial release with Electroneum testnet deployment
 - **v0.9.0** - Beta release with Electroneum testnet support
 - **v0.8.0** - Alpha release with basic token creation features
 
 ---
 
-**StrataForge 2025** - Empowering creators on the Electroneum blockchain
+**StrataForge 2025** - Empowering creators on the Base blockchain

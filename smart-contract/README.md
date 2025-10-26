@@ -1,10 +1,10 @@
-# StrataForge No-Code Token Platform — Electroneum Smart Contracts
+# StrataForge No-Code Token Platform — Base Sepolia Smart Contracts
 
-Transform your vision into digital assets—without writing code. StrataForge empowers creators, entrepreneurs, and businesses to mint NFTs and launch tokens in minutes, with zero technical knowledge required, now powered by the Electroneum blockchain.
+Transform your vision into digital assets—without writing code. StrataForge empowers creators, entrepreneurs, and businesses to mint NFTs and launch tokens in minutes, with zero technical knowledge required, now powered by the Base blockchain.
 
 ## Project Overview
 
-This repository contains the smart contracts and deployment scripts powering the StrataForge no-code platform on the Electroneum blockchain. Our unified solution enables users to deploy multiple token standards, manage campaigns, and handle whitelists—all without blockchain development expertise.
+This repository contains the smart contracts and deployment scripts powering the StrataForge no-code platform on the Base blockchain. Our unified solution enables users to deploy multiple token standards, manage campaigns, and handle whitelists—all without blockchain development expertise.
 
 ### Key Features
 
@@ -35,7 +35,7 @@ This repository contains the smart contracts and deployment scripts powering the
   Automated tests for all contracts using Hardhat and Chai.
 
 - `scripts/`  
-  Deployment scripts for Electroneum networks.
+  Deployment scripts for Base networks.
 
 - `artifacts/`  
   Compiled contract artifacts.
@@ -44,12 +44,11 @@ This repository contains the smart contracts and deployment scripts powering the
   TypeScript typings for contracts.
 
 - `hardhat.config.ts`  
-  Hardhat configuration, including Electroneum network settings.
+  Hardhat configuration, including Base network settings.
 
 ## Supported Networks
 
-- **Electroneum Mainnet (Chain ID: 52014)**
-- **Electroneum Testnet (Chain ID: 5201420)** ✅ **DEPLOYED**
+- **Base Sepolia Testnet (Chain ID: 84532)** ✅ **DEPLOYED**
 - Local Hardhat Network
 
 ## Getting Started
@@ -70,11 +69,9 @@ npm install
 Create a `.env` file in the root directory:
 
 ```
-ELECTRONEUM_RPC_URL=your_electroneum_mainnet_rpc_url
-ELECTRONEUM_TESTNET_RPC_URL=your_electroneum_testnet_rpc_url
-PRIVATE_KEY=your_private_key
-ANKR_API_KEY=your_ankr_api_key
-ETHERSCAN_API_KEY=your_electroneum_blockexplorer_api_key
+ACCOUNT_PRIVATE_KEY=your_private_key_here
+BASE_SEPOLIA_RPC_URL=https://sepolia.base.org
+BASESCAN_API_KEY=your_basescan_api_key_here
 ```
 
 ### Compile Contracts
@@ -91,16 +88,10 @@ npx hardhat test
 
 ### Deploy Contracts
 
-Deploy to Electroneum Testnet:
+Deploy to Base Sepolia Testnet:
 
 ```sh
-npx hardhat run scripts/deploy-strataforge.ts --network electroneum-testnet
-```
-
-Deploy to Electroneum Mainnet:
-
-```sh
-npx hardhat run scripts/deploy-strataforge.ts --network electroneum
+npx hardhat run scripts/deploy-strataforge.ts --network base-sepolia
 ```
 
 ## Usage
@@ -119,41 +110,40 @@ npx hardhat run scripts/deploy-strataforge.ts --network electroneum
 - All contracts are tested and audited for security.
 - Anti-whale and collateralization features are available for specialized tokens.
 - Whitelist and campaign management ensure fair and transparent distribution.
-- Gas optimization for Electroneum network compatibility.
+- Gas optimization for Base network compatibility.
 
 ## Deployed Contracts
 
-### **Electroneum Testnet Deployment** ✅ **LIVE**
+### **Base Sepolia Testnet Deployment** ✅ **LIVE**
 
-**Network**: Electroneum Testnet (Chain ID: 5201420)  
+**Network**: Base Sepolia Testnet (Chain ID: 84532)  
 **Deployer**: `0x0eE1F2b663547dAa487F57C517C7563AdCf86da0`  
-**Deployment Date**: August 25, 2025
+**Deployment Date**: October 26, 2025
 
 #### Core Contracts:
-- **StrataForgeAdmin**: `0xFb8B95b90C19990EBe64741e35EACDbE0Fd30bcf`
-- **StrataForgeFactory**: `0xf28B02EDAe285B30FB9d7a9d78138ac982C5a08B`
-- **StrataForgeAirdropFactory**: `0xD9bC090b10c0323E672e9e7F3A9E4394650ED472`
-- **StrataForgeProxyFactory**: `0xFe9fDE126C4aE4Be8A6D4F1Da284611935726920`
+- **StrataForgeAdmin**: `0x87a25cC6F42B194061f02382fee342001cBF9767`
+- **StrataForgeFactory**: `0x65B7E0961160Abe5d49500CE834324B76b755762`
+- **StrataForgeAirdropFactory**: `0xAfA316A63DB6f9EE4F7fE975e110343a0c4c8205`
+- **StrataForgeProxyFactory**: `0x96ae871091EBA6B8287f38A3FAA8B53BC5a9AC76`
 
 #### Token Implementations:
-- **StrataForgeERC20Implementation**: `0xaf23a66689e55f08B24271Ce2dB6c5522F666d05`
-- **StrataForgeERC721Implementation**: `0xfaF064467DF1c72f93b48956C11D92359d5a3f99`
-- **StrataForgeERC1155Implementation**: `0x036Cf39BA8CbcBfEa786C9d1d34009208ED57D74`
-- **StrataForgeMemecoinImplementation**: `0x4eB7bba93734533350455B50056c33e93DD86493`
-- **StrataForgeStablecoinImplementation**: `0x0b5870D52E5b0b2dDD75a66BC124DF350643C682`
+- **StrataForgeERC20Implementation**: `0x092495997E0060E2b811A80d0b6c1c69aBCA7B3C`
+- **StrataForgeERC721Implementation**: `0x264f64E0F7eAad68447c6536fFa816e802B4c26d`
+- **StrataForgeERC1155Implementation**: `0x1EEaC20cd0C01bb7D85D4FB2AAE0bd502b03a5dA`
+- **StrataForgeMemecoinImplementation**: `0xc4745695430aAc3ac2095375d37aD6D82EE8056A`
+- **StrataForgeStablecoinImplementation**: `0x12746721fA858D3Bb0F81823Ee3B41c54C9b949b`
 
 ### **Block Explorer Links**
-- **Testnet Explorer**: [https://testnet-blockexplorer.electroneum.com](https://testnet-blockexplorer.electroneum.com)
-- **Mainnet Explorer**: [https://blockexplorer.electroneum.com](https://blockexplorer.electroneum.com)
+- **Base Sepolia Explorer**: [https://sepolia.basescan.org](https://sepolia.basescan.org)
 
-## Electroneum Integration
+## Base Integration
 
-This project is specifically optimized for the Electroneum blockchain:
+This project is specifically optimized for the Base blockchain:
 
-- **Gas Optimization**: Contracts are optimized for Electroneum's gas model
-- **Network Compatibility**: Full compatibility with Electroneum's EVM implementation
-- **RPC Integration**: Support for Electroneum's RPC endpoints
-- **Block Explorer**: Integration with Electroneum's block explorer for contract verification
+- **Gas Optimization**: Contracts are optimized for Base's gas model
+- **Network Compatibility**: Full compatibility with Base's EVM implementation
+- **RPC Integration**: Support for Base's RPC endpoints
+- **Block Explorer**: Integration with Base's block explorer for contract verification
 
 ## License
 

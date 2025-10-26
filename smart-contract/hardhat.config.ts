@@ -8,36 +8,23 @@ dotenv.config();
 const config: HardhatUserConfig = {
   solidity: "0.8.26",
   networks: {
-    electroneum: {
-      url: process.env.ELECTRONEUM_RPC_URL || `https://rpc.ankr.com/electroneum/${process.env.ANKR_API_KEY}`,
-      accounts: process.env.PRIVATE_KEY ? [process.env.PRIVATE_KEY] : [],
-      timeout: 60000, // 60 seconds
-    },
-    'electroneum-testnet': {
-      url: process.env.ELECTRONEUM_TESTNET_RPC_URL || 'https://rpc.ankr.com/electroneum_testnet',
-      accounts: process.env.PRIVATE_KEY ? [process.env.PRIVATE_KEY] : [],
-      timeout: 60000, // 60 seconds
+    'base-sepolia': {
+      url: process.env.BASE_SEPOLIA_RPC_URL || 'https://sepolia.base.org',
+      accounts: process.env.ACCOUNT_PRIVATE_KEY ? [process.env.ACCOUNT_PRIVATE_KEY] : [],
+      chainId: 84532,
     },
   },
   etherscan: {
     apiKey: {
-      electroneum: process.env.ETHERSCAN_API_KEY || "empty",
+      "base-sepolia": process.env.BASESCAN_API_KEY || "empty",
     },
     customChains: [
       {
-        network: "electroneum",
-        chainId: 52014,
+        network: "base-sepolia",
+        chainId: 84532,
         urls: {
-          apiURL: "https://blockexplorer.electroneum.com/api",
-          browserURL: "https://blockexplorer.electroneum.com",
-        },
-      },
-      {
-        network: "electroneum-testnet",
-        chainId: 5201420,
-        urls: {
-          apiURL: "https://testnet-blockexplorer.electroneum.com/api",
-          browserURL: "https://testnet-blockexplorer.electroneum.com"
+          apiURL: "https://api-sepolia.basescan.org/api",
+          browserURL: "https://sepolia.basescan.org"
         }
       }
     ],

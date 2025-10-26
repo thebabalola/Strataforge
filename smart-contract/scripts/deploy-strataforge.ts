@@ -27,10 +27,13 @@ async function retryOperation<T>(
 
 async function main() {
   const [deployer] = await ethers.getSigners();
-  const deployerAddress = "0x0eE1F2b663547dAa487F57C517C7563AdCf86da0";
+  
+  if (!deployer) {
+    throw new Error("No deployer account found. Please check your private key configuration.");
+  }
 
   console.log(
-    "Deploying contracts to Electroneum Testnet with account:",
+    "Deploying contracts to Base Sepolia with account:",
     deployer.address
   );
   
@@ -42,12 +45,13 @@ async function main() {
   console.log(
     "Account balance:",
     ethers.formatEther(balance),
-    "ETN"
+    "ETH"
   );
 
-  // Gas settings for Electroneum testnet - let Hardhat estimate gas
+  // Gas settings for Base Sepolia - let Hardhat estimate gas
   const gasSettings = {
-    gasPrice: ethers.parseUnits("30", "gwei"),
+    // Base Sepolia typically has lower gas prices
+    gasPrice: ethers.parseUnits("0.1", "gwei"),
   };
 
   console.log("\n=== Deploying Token Implementations ===");
@@ -65,16 +69,13 @@ async function main() {
   const erc20Address = await erc20Implementation.getAddress();
   console.log("StrataForgeERC20Implementation deployed to:", erc20Address);
 
-  // Deploy ERC721 Implementation with higher gas limit
+  // Deploy ERC721 Implementation
   console.log("Deploying StrataForgeERC721Implementation...");
   const StrataForgeERC721Implementation = await ethers.getContractFactory(
     "StrataForgeERC721Implementation"
   );
   const erc721Implementation = await retryOperation(async () => {
-    const contract = await StrataForgeERC721Implementation.deploy({
-      ...gasSettings,
-      gasLimit: 8000000, // Higher gas limit for ERC721
-    });
+    const contract = await StrataForgeERC721Implementation.deploy(gasSettings);
     await contract.waitForDeployment();
     return contract;
   });
@@ -87,10 +88,7 @@ async function main() {
     "StrataForgeERC1155Implementation"
   );
   const erc1155Implementation = await retryOperation(async () => {
-    const contract = await StrataForgeERC1155Implementation.deploy({
-      ...gasSettings,
-      gasLimit: 8000000, // Higher gas limit for ERC1155
-    });
+    const contract = await StrataForgeERC1155Implementation.deploy(gasSettings);
     await contract.waitForDeployment();
     return contract;
   });
@@ -103,10 +101,7 @@ async function main() {
     "StrataForgeMemecoinImplementation"
   );
   const memecoinImplementation = await retryOperation(async () => {
-    const contract = await StrataForgeMemecoinImplementation.deploy({
-      ...gasSettings,
-      gasLimit: 8000000, // Higher gas limit for Memecoin
-    });
+    const contract = await StrataForgeMemecoinImplementation.deploy(gasSettings);
     await contract.waitForDeployment();
     return contract;
   });
@@ -122,10 +117,7 @@ async function main() {
     "StrataForgeStablecoinImplementation"
   );
   const stablecoinImplementation = await retryOperation(async () => {
-    const contract = await StrataForgeStablecoinImplementation.deploy({
-      ...gasSettings,
-      gasLimit: 8000000, // Higher gas limit for Stablecoin
-    });
+    const contract = await StrataForgeStablecoinImplementation.deploy(gasSettings);
     await contract.waitForDeployment();
     return contract;
   });
@@ -135,7 +127,7 @@ async function main() {
     stablecoinAddress
   );
 
-  console.log("\n=== Deploying Electroneum Contracts ===");
+  console.log("\n=== Deploying Core Contracts ===");
 
   // Deploy Proxy Factory
   console.log("Deploying StrataForgeProxyFactory...");
@@ -162,7 +154,7 @@ async function main() {
   const StrataForgeAdmin = await ethers.getContractFactory("StrataForgeAdmin");
   const adminContract = await retryOperation(async () => {
     const contract = await StrataForgeAdmin.deploy(
-      deployerAddress,
+      deployer.address, // Use the actual deployer address
       gasSettings
     );
     await contract.waitForDeployment();
@@ -228,8 +220,8 @@ async function main() {
   console.log("Airdrop contract linked in Admin");
 
   console.log("\n=== Deployment Summary ===");
-  console.log("Network: Electroneum Testnet (5201420)");
-  console.log("Deployer:", deployerAddress);
+  console.log("Network: Base Sepolia (84532)");
+  console.log("Deployer:", deployer.address);
   console.log("\nContract Addresses:");
   console.log("├── StrataForgeAdmin:", adminAddress);
   console.log("├── StrataForgeERC20Implementation:", erc20Address);
@@ -242,14 +234,14 @@ async function main() {
   console.log("└── StrataForgeAirdropFactory:", airdropAddress);
 
   console.log("\n✅ All contracts deployed successfully!");
-  console.log("You can verify these contracts manually on Electroneum Testnet Explorer:");
-  console.log("https://testnet-blockexplorer.electroneum.com");
+  console.log("You can verify these contracts on Base Sepolia Explorer:");
+  console.log("https://sepolia.basescan.org");
 
   // Save deployment addresses to a file
   const deploymentInfo = {
-    network: "Electroneum Testnet",
-    chainId: 5201420,
-    deployer: deployerAddress,
+    network: "Base Sepolia",
+    chainId: 84532,
+    deployer: deployer.address,
     contracts: {
       StrataForgeAdmin: adminAddress,
       StrataForgeERC20Implementation: erc20Address,
@@ -266,10 +258,10 @@ async function main() {
 
   const fs = require("fs");
   fs.writeFileSync(
-    "deployment-electroneum-testnet.json",
+    "deployment-base-sepolia.json",
     JSON.stringify(deploymentInfo, null, 2)
   );
-  console.log("\n📄 Deployment info saved to: deployment-electroneum-testnet.json");
+  console.log("\n📄 Deployment info saved to: deployment-base-sepolia.json");
 }
 
 main().catch((error) => {

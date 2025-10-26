@@ -47,8 +47,8 @@ StrataForge simplifies blockchain interactions, making token deployment accessib
 
 3. Create a `.env.local` file in the root directory and add the necessary environment variables:
    ```
-   NEXT_PUBLIC_RPC_URL=your_rpc_url
-   NEXT_PUBLIC_CHAIN_ID=1
+   NEXT_PUBLIC_PROJECT_ID=your_appkit_project_id
+   NEXT_PUBLIC_MORALIS_API_KEY=your_moralis_api_key
    # Add other required environment variables
    ```
 

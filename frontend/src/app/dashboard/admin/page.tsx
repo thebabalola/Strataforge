@@ -10,11 +10,11 @@ import AdminDashboardLayout from "./AdminDashboardLayout";
 import { useUsdEthPrice } from "../../../hooks/useUsdEthPrice"; // Added Moralis hook
 
 const ADMIN_CONTRACT_ADDRESS =
-  "0xFb8B95b90C19990EBe64741e35EACDbE0Fd30bcf" as const;
+  "0x87a25cC6F42B194061f02382fee342001cBF9767" as const;
 const FACTORY_CONTRACT_ADDRESS =
-  "0xf28B02EDAe285B30FB9d7a9d78138ac982C5a08B" as const;
+  "0x65B7E0961160Abe5d49500CE834324B76b755762" as const;
 const AIRDROP_FACTORY_ADDRESS =
-  "0xD9bC090b10c0323E672e9e7F3A9E4394650ED472" as const;
+  "0xAfA316A63DB6f9EE4F7fE975e110343a0c4c8205" as const;
 
 const adminABI = StrataForgeAdminABI as Abi;
 const factoryABI = StrataForgeFactoryABI as Abi;

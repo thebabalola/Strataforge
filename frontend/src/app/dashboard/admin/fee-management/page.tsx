@@ -12,7 +12,7 @@ import StrataForgeAdminABI from "../../../../app/components/ABIs/StrataForgeAdmi
 import AdminDashboardLayout from "../AdminDashboardLayout";
 
 const ADMIN_CONTRACT_ADDRESS =
-  "0xFb8B95b90C19990EBe64741e35EACDbE0Fd30bcf" as const;
+  "0x87a25cC6F42B194061f02382fee342001cBF9767" as const;
 const adminABI = StrataForgeAdminABI as Abi;
 
 interface AirdropFeeTier {

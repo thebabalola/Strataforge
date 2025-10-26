@@ -4,7 +4,7 @@ import React, { createContext, useContext, useState } from "react";
 import { useAccount, useDisconnect, useSignMessage } from "wagmi";
 // import { baseSepolia } from '../lib/wagmi-config';
 // import { liskSepolia } from "../lib/wagmi-config";
-import { electroneumTestnet } from "../lib/wagmi-config";
+import { baseSepolia } from "../lib/wagmi-config";
 
 interface WalletContextType {
   address: `0x${string}` | undefined;
@@ -13,7 +13,7 @@ interface WalletContextType {
   connect: () => void;
   disconnect: () => void;
   connectError: Error | null;
-  electroneumTestnet: typeof electroneumTestnet;
+  baseSepolia: typeof baseSepolia;
   signMessage: (message: string) => Promise<`0x${string}` | undefined>;
 }
 
@@ -78,7 +78,7 @@ export function WalletProvider({ children }: { children: React.ReactNode }) {
         connectError,
         // baseSepolia,
         // liskSepolia,
-        electroneumTestnet,
+        baseSepolia,
         signMessage,
       }}
     >

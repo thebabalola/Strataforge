@@ -2,36 +2,36 @@
 import { createConfig, http } from "wagmi";
 import { metaMask, coinbaseWallet } from "@wagmi/connectors";
 
-export const electroneumTestnet = {
-  id: 5201420, // Electroneum Testnet chain ID
-  name: "Electroneum Testnet",
-  network: "electroneum-testnet",
+export const baseSepolia = {
+  id: 84532, // Base Sepolia chain ID
+  name: "Base Sepolia",
+  network: "base-sepolia",
   nativeCurrency: {
-    name: "Electroneum",
-    symbol: "ETN",
+    name: "Ethereum",
+    symbol: "ETH",
     decimals: 18,
   },
   rpcUrls: {
     default: {
-      http: ["https://rpc.ankr.com/electroneum_testnet"],
+      http: ["https://sepolia.base.org"],
     },
     public: {
-      http: ["https://rpc.ankr.com/electroneum_testnet"],
+      http: ["https://sepolia.base.org"],
     },
   },
   blockExplorers: {
     default: {
-      name: "Electroneum Testnet Explorer",
-      url: "https://testnet-blockexplorer.electroneum.com",
+      name: "Base Sepolia Explorer",
+      url: "https://sepolia.basescan.org",
     },
   },
   testnet: true,
 };
 
 export const config = createConfig({
-  chains: [electroneumTestnet],
+  chains: [baseSepolia],
   connectors: [metaMask(), coinbaseWallet({ appName: "StrataForge" })],
   transports: {
-    [electroneumTestnet.id]: http("https://rpc.ankr.com/electroneum_testnet"),
+    [baseSepolia.id]: http("https://sepolia.base.org"),
   },
 });

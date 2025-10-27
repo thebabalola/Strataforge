@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useWallet } from "../../../contexts/WalletContext";
 import { useReadContract, useReadContracts } from "wagmi";
@@ -155,16 +156,14 @@ const AdminSidebar = () => {
       <aside className="w-64 h-auto min-h-2/5 transition-transform duration-300 ease-in-out">
         <div className="h-full inset-shadow-[0px_0px_10px_0px_hsl(var(--foreground)/0.25)] backdrop-blur-[30px] bg-[#201726] flex flex-col">
           <div className="p-4 flex flex-col h-full">
-            <Link href="/" className="flex items-center mb-8 hover:opacity-80 transition-opacity">
-              <div className="flex items-center">
-                <div className="w-8 h-8 bg-gradient-to-b from-blue-400 to-purple-500 rounded mr-2 flex items-center justify-center">
-                  <div className="w-4 h-0.5 bg-gray-300"></div>
-                </div>
-                <div className="text-xl font-bold flex items-center">
-                  <span className="text-gray-200">strata</span>
-                  <span className="text-gray-200">Forge</span>
-                </div>
-              </div>
+            <Link href="/" className="flex items-center mb-8">
+              <Image
+                src="/strataforge-logo.png"
+                alt="StrataForge Logo"
+                width={120}
+                height={40}
+                className="object-contain"
+              />
             </Link>
             <div className="bg-red-500/10 border border-red-500/20 rounded-xl p-4 flex items-center space-x-3">
               <svg
@@ -192,16 +191,14 @@ const AdminSidebar = () => {
     <aside className="w-64 h-auto min-h-2/5 transition-transform duration-300 ease-in-out">
       <div className="h-full inset-shadow-[0px_0px_10px_0px_hsl(var(--foreground)/0.25)] backdrop-blur-[30px] bg-[#201726] flex flex-col">
         <div className="p-4 flex flex-col h-full">
-          <Link href="/" className="flex items-center mb-8 hover:opacity-80 transition-opacity">
-            <div className="flex items-center">
-              <div className="w-8 h-8 bg-gradient-to-b from-blue-400 to-purple-500 rounded mr-2 flex items-center justify-center">
-                <div className="w-4 h-0.5 bg-gray-300"></div>
-              </div>
-              <div className="text-xl font-bold flex items-center">
-                <span className="text-gray-200">strata</span>
-                <span className="text-gray-200">Forge</span>
-              </div>
-            </div>
+          <Link href="/" className="flex items-center mb-8">
+            <Image
+              src="/strataforge-logo.png"
+              alt="StrataForge Logo"
+              width={120}
+              height={40}
+              className="object-contain"
+            />
           </Link>
 
           <div className="flex items-center gap-2 mb-8 px-4">

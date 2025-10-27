@@ -1,5 +1,4 @@
 'use client';
-import { motion } from 'framer-motion';
 import { useState } from 'react';
 
 type PlatformFeaturesProps = Record<string, never>;
@@ -36,27 +35,6 @@ const PlatformFeatures: React.FC<PlatformFeaturesProps> = () => {
     },
   ];
 
-  // Animation variants
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: { 
-      opacity: 1,
-      transition: { 
-        staggerChildren: 0.2,
-        delayChildren: 0.3,
-      }
-    },
-  };
-  
-  const itemVariants = {
-    hidden: { y: 20, opacity: 0 },
-    visible: { 
-      y: 0,
-      opacity: 1,
-      transition: { type: 'spring', stiffness: 100 }
-    },
-  };
-
   return (
     <section className="py-20 bg-black/90 relative overflow-hidden">
       {/* Decorative blockchain elements */}
@@ -73,14 +51,8 @@ const PlatformFeatures: React.FC<PlatformFeaturesProps> = () => {
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <motion.div 
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          className="text-center mb-16"
-        >
-          <motion.h2 
-            variants={itemVariants}
+        <div className="text-center mb-16">
+          <h2 
             className="text-3xl md:text-4xl font-semibold mb-4"
             style={{
               background: 'linear-gradient(to right, #C44DFF, #0AACE6)',
@@ -89,26 +61,16 @@ const PlatformFeatures: React.FC<PlatformFeaturesProps> = () => {
             }}
           >
             Strataforge Platform Features
-          </motion.h2>
-          <motion.p 
-            variants={itemVariants}
-            className="text-gray-400 max-w-2xl mx-auto"
-          >
+          </h2>
+          <p className="text-gray-400 max-w-2xl mx-auto">
             Our unified platform empowers creators, businesses, and communities to deploy tokens without requiring blockchain development expertise.
-          </motion.p>
-        </motion.div>
+          </p>
+        </div>
 
-        <motion.div 
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8"
-        >
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
           {features.map((feature, index) => (
-            <motion.div
+            <div
               key={index}
-              variants={itemVariants}
               className={`bg-gradient-to-br p-[1px] rounded-xl ${
                 index % 2 === 0 
                   ? 'from-[#C44DFF]/20 to-[#0AACE6]/20' 
@@ -139,9 +101,9 @@ const PlatformFeatures: React.FC<PlatformFeaturesProps> = () => {
                 </div>
                 <p className="text-gray-400 text-sm leading-relaxed">{feature.description}</p>
               </div>
-            </motion.div>
+            </div>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   );

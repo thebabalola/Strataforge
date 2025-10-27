@@ -1,5 +1,4 @@
 'use client';
-import { motion } from 'framer-motion';
 
 type HowItWorksProps = Record<string, never>;
 
@@ -33,37 +32,11 @@ const HowItWorks: React.FC<HowItWorksProps> = () => {
     },
   ];
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-        delayChildren: 0.3,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { y: 20, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: { type: 'spring', stiffness: 100 },
-    },
-  };
-
   return (
     <section className="py-20 bg-black/90">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          className="text-center mb-16"
-        >
-          <motion.h2
-            variants={itemVariants}
+        <div className="text-center mb-16">
+          <h2
             className="text-3xl md:text-4xl font-semibold mb-4"
             style={{
               background: 'linear-gradient(to right, #C44DFF, #0AACE6)',
@@ -72,23 +45,16 @@ const HowItWorks: React.FC<HowItWorksProps> = () => {
             }}
           >
             How It Works
-          </motion.h2>
-          <motion.p variants={itemVariants} className="text-gray-400 max-w-2xl mx-auto">
+          </h2>
+          <p className="text-gray-400 max-w-2xl mx-auto">
             Experience a seamless token deployment journey powered by StrataForge
-          </motion.p>
-        </motion.div>
+          </p>
+        </div>
 
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
-        >
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {steps.map((step, index) => (
-            <motion.div
+            <div
               key={index}
-              variants={itemVariants}
               className="bg-black/90 rounded-xl p-6 relative"
             >
               {/* Connected line between steps */}
@@ -116,9 +82,9 @@ const HowItWorks: React.FC<HowItWorksProps> = () => {
                 <h3 className="text-white text-lg font-medium mb-2">{step.title}</h3>
                 <p className="text-gray-400 text-sm">{step.description}</p>
               </div>
-            </motion.div>
+            </div>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   );

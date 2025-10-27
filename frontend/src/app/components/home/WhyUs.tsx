@@ -1,7 +1,6 @@
 'use client';
 
 import { ReactNode } from 'react';
-import { motion } from 'framer-motion';
 
 // Define props interface
 type WhyUsProps = Record<string, never>;
@@ -71,26 +70,6 @@ const WhyUs: React.FC<WhyUsProps> = () => {
     },
   ];
 
-  // Animation variants
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { y: 20, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: { type: 'spring', stiffness: 80 },
-    },
-  };
-
   return (
     <section className='py-20 bg-black/90 relative overflow-hidden'>
       {/* Background decorative elements */}
@@ -100,13 +79,7 @@ const WhyUs: React.FC<WhyUsProps> = () => {
       </div>
 
       <div className='max-w-7xl mx-auto px-4 relative z-10'>
-        <motion.div 
-          className='text-center mb-16'
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
+        <div className='text-center mb-16'>
           <div className='inline-block mb-4'>
             <div className='bg-gray-800/80 backdrop-blur-md text-white text-sm py-1 px-4 rounded-full flex items-center border border-gray-700'>
               <span className='mr-2 text-xs uppercase tracking-wider font-medium'>Token Platform</span>
@@ -132,27 +105,16 @@ const WhyUs: React.FC<WhyUsProps> = () => {
           <p className='text-gray-300 max-w-2xl mx-auto'>
             Our no-code platform brings trust, transparency, and efficiency to token deployment and campaign management.
           </p>
-        </motion.div>
+        </div>
 
-        <motion.div 
-          className='grid grid-cols-1 md:grid-cols-3 gap-8'
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-        >
+        <div className='grid grid-cols-1 md:grid-cols-3 gap-8'>
           {cards.map((card, index) => (
-            <motion.div 
+            <div 
               key={index} 
               className='bg-[#1E1425] rounded-xl p-6 flex flex-col backdrop-blur-sm border border-white/5 hover:border-purple-500/20 transition-all duration-300 group'
-              variants={itemVariants}
-              whileHover={{ 
-                y: -5, 
-                boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
-              }}
             >
               <div 
-                className='rounded-full w-12 h-12 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300'
+                className='rounded-full w-12 h-12 flex items-center justify-center mb-6'
                 style={{
                   background: `linear-gradient(135deg, ${card.gradientFrom}, ${card.gradientTo})`,
                 }}
@@ -166,18 +128,15 @@ const WhyUs: React.FC<WhyUsProps> = () => {
               
               <div className='mt-6 pt-4 border-t border-gray-700/30 flex justify-between items-center'>
                 <div className='text-xs text-gray-500'>Web3 verified</div>
-                <motion.div 
-                  className='w-6 h-6 rounded-full bg-gray-800 flex items-center justify-center'
-                  whileHover={{ scale: 1.2, rotate: 90 }}
-                >
+                <div className='w-6 h-6 rounded-full bg-gray-800 flex items-center justify-center'>
                   <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M6 2V10M2 6H10" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
-                </motion.div>
+                </div>
               </div>
-            </motion.div>
+            </div>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   );

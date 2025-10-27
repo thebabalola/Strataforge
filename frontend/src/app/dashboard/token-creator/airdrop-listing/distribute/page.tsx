@@ -57,9 +57,9 @@ const BackgroundShapes = () => (
 );
 
 const FACTORY_CONTRACT_ADDRESS =
-  "0x0dBc2Da0A46Ec616576b2C0f38DD911b1392EE0D" as const;
+  "0x1685308B23D7300041Fb31e7Ca27bBd6a3693F5c" as const;
 const ADMIN_CONTRACT_ADDRESS =
-  "0xAf6AB6822A586Fece70ca4D2a7e9B34E968fE991" as const;
+  "0x2226ABe4960412F5ad5d0e0d90810243b310ddB1" as const;
 
 type RecipientFile = {
   id: string;

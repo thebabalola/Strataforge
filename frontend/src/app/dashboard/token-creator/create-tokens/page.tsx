@@ -15,9 +15,9 @@ import { useRouter } from "next/navigation";
 import { useUsdEthPrice } from "../../../../hooks/useUsdEthPrice"; // Import Moralis hook
 
 const ADMIN_CONTRACT_ADDRESS =
-  "0xAf6AB6822A586Fece70ca4D2a7e9B34E968fE991" as const;
+  "0x2226ABe4960412F5ad5d0e0d90810243b310ddB1" as const;
 const FACTORY_CONTRACT_ADDRESS =
-  "0x85941e2Dd3f3198Ce038A301650f4249EB7aCbb7" as const;
+  "0x17B1A783200AEE500054F3F406660c2d0E7ed03B" as const;
 const adminABI = StrataForgeAdminABI as Abi;
 const factoryABI = StrataForgeFactoryABI as Abi;
 

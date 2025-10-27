@@ -12,7 +12,7 @@ import StrataForgeAdminABI from "../../../../app/components/ABIs/StrataForgeAdmi
 import AdminDashboardLayout from "../AdminDashboardLayout";
 
 const ADMIN_CONTRACT_ADDRESS =
-  "0xAf6AB6822A586Fece70ca4D2a7e9B34E968fE991" as const;
+  "0x2226ABe4960412F5ad5d0e0d90810243b310ddB1" as const;
 const adminABI = StrataForgeAdminABI as Abi;
 // const EXPLORER_URL = "https://sepolia.basescan.org/address";
 const EXPLORER_URL = "https://sepolia.basescan.org/address";

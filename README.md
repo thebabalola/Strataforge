@@ -137,17 +137,17 @@ npx hardhat run scripts/deploy-strataforge.ts --network base-sepolia
 **Deployment Date:** October 26, 2025
 
 #### Core Contracts:
-- **StrataForgeAdmin:** `0xAf6AB6822A586Fece70ca4D2a7e9B34E968fE991`
-- **StrataForgeFactory:** `0x85941e2Dd3f3198Ce038A301650f4249EB7aCbb7`
-- **StrataForgeAirdropFactory:** `0x0dBc2Da0A46Ec616576b2C0f38DD911b1392EE0D`
-- **StrataForgeProxyFactory:** `0x1439f896f771c69848b9DACcccDE7CCCf2b10AA1`
+- **StrataForgeAdmin:** `0x2226ABe4960412F5ad5d0e0d90810243b310ddB1`
+- **StrataForgeFactory:** `0x17B1A783200AEE500054F3F406660c2d0E7ed03B`
+- **StrataForgeAirdropFactory:** `0x1685308B23D7300041Fb31e7Ca27bBd6a3693F5c`
+- **StrataForgeProxyFactory:** `0xCA4530f667e74B2F8f0E55f396E22AB7c515822d`
 
 #### Token Implementations:
-- **StrataForgeERC20Implementation:** `0xDF31A5a8Bfd8dDe160eB4EE2482a2cd20E15F567`
-- **StrataForgeERC721Implementation:** `0x7E2337cffe34Db29896436ee3Df4fA3B0b1Cc10F`
-- **StrataForgeERC1155Implementation:** `0xc9859c8181F74f493dF807B054e1923F7C7Df430`
-- **StrataForgeMemecoinImplementation:** `0x2EbE7f6911C9945c8695938eBD2A2951B5888A23`
-- **StrataForgeStablecoinImplementation:** `0x09Cc713bBB130C4e41a105C4BDD999bD88F477f8`
+- **StrataForgeERC20Implementation:** `0x47e061644AD652b17E234152F38576C93385E56e`
+- **StrataForgeERC721Implementation:** `0x84E1dd60D72f87391cdf254eB6B7762B41c9c0ED`
+- **StrataForgeERC1155Implementation:** `0xbaDb13B071A6Df12228266a44655110ef5037978`
+- **StrataForgeMemecoinImplementation:** `0x06A6020C3D3318E5A2230E3eD1b180539A74b203`
+- **StrataForgeStablecoinImplementation:** `0xBE5d6BB1961f454fEF1bEe1c6a4B74F5F589E3De`
 
 ### Block Explorer Links
 - **Base Sepolia Explorer:** [https://sepolia.basescan.org](https://sepolia.basescan.org)

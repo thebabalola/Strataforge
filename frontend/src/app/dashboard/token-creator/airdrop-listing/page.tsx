@@ -42,7 +42,7 @@ const BackgroundShapes = () => (
 
 // Updated contract addresses
 const FACTORY_CONTRACT_ADDRESS =
-  "0x0dBc2Da0A46Ec616576b2C0f38DD911b1392EE0D" as const;
+  "0x1685308B23D7300041Fb31e7Ca27bBd6a3693F5c" as const;
 
 type RecipientFile = {
   id: string;

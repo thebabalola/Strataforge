@@ -60,7 +60,7 @@ interface TokenInfo {
 }
 
 const FACTORY_CONTRACT_ADDRESS =
-  "0x85941e2Dd3f3198Ce038A301650f4249EB7aCbb7" as const;
+  "0x17B1A783200AEE500054F3F406660c2d0E7ed03B" as const;
 const BASE_SEPOLIA_CHAIN_ID = 84532;
 
 const ManageToken = () => {

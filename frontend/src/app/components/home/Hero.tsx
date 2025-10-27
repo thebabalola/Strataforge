@@ -133,38 +133,6 @@ const Hero: React.FC<HeroProps> = () => {
         />
 
         <div className='absolute left-[8%] bottom-[15%] w-20 h-20 border border-cyan-400/40 backdrop-blur-sm rounded-full' />
-
-        {/* Connection Lines */}
-        <svg className='absolute inset-0 w-full h-full opacity-30' xmlns="http://www.w3.org/2000/svg">
-          <line 
-            x1="15%" 
-            y1="25%" 
-            x2="75%" 
-            y2="50%" 
-            stroke="url(#line-gradient)" 
-            strokeWidth="2"
-            strokeDasharray="5,5"
-          />
-          <line 
-            x1="75%" 
-            y1="60%" 
-            x2="30%" 
-            y2="85%" 
-            stroke="url(#line-gradient-2)" 
-            strokeWidth="2"
-            strokeDasharray="5,5"
-          />
-          <defs>
-            <linearGradient id="line-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stopColor="#8B45FF" />
-              <stop offset="100%" stopColor="#3B82F6" />
-            </linearGradient>
-            <linearGradient id="line-gradient-2" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stopColor="#3B82F6" />
-              <stop offset="100%" stopColor="#22D3EE" />
-            </linearGradient>
-          </defs>
-        </svg>
       </div>
 
       <div className='max-w-7xl mx-auto relative z-10'>

@@ -153,14 +153,17 @@ export default function DashboardSidebar() {
     <aside className="w-64 h-auto min-h-[calc(100vh-64px)] transition-transform duration-300 ease-in-out">
       <div className="h-full bg-[#201726] flex flex-col">
         <div className="p-4 flex flex-col h-full">
-          <div className="flex items-center mb-8">
-            <div className="text-xl font-bold flex items-center">
-              <span className="text-[hsl(var(--primary-from))] mr-1">
-                Strata
-              </span>
-              <span className="text-[hsl(var(--foreground))]">Forge</span>
+          <Link href="/" className="flex items-center mb-8 hover:opacity-80 transition-opacity">
+            <div className="flex items-center">
+              <div className="w-8 h-8 bg-gradient-to-b from-blue-400 to-purple-500 rounded mr-2 flex items-center justify-center">
+                <div className="w-4 h-0.5 bg-gray-300"></div>
+              </div>
+              <div className="text-xl font-bold flex items-center">
+                <span className="text-gray-200">strata</span>
+                <span className="text-gray-200">Forge</span>
+              </div>
             </div>
-          </div>
+          </Link>
           <div className="flex items-center gap-2 mb-8 px-4">
             <div className="w-8 h-8 rounded-full bg-gradient-to-r from-purple-500 to-blue-600 flex items-center justify-center">
               <svg

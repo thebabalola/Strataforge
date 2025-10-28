@@ -73,10 +73,14 @@ const TeamMember: React.FC<{
     <div className="bg-gradient-to-br from-gray-900/50 to-gray-800/50 backdrop-blur-sm rounded-2xl p-6 border border-white/10 hover:border-purple-500/30 transition-all duration-300 group">
       <div className="text-center">
         <div className="w-24 h-24 mx-auto mb-4 rounded-full bg-gradient-to-r from-purple-500 to-blue-500 p-1">
-          <div className="w-full h-full rounded-full bg-gray-800 flex items-center justify-center">
-            <span className="text-2xl font-bold text-white">
-              {name.charAt(0)}
-            </span>
+          <div className="w-full h-full rounded-full bg-gray-800 flex items-center justify-center overflow-hidden">
+            <Image
+              src={image}
+              alt={name}
+              width={88}
+              height={88}
+              className="w-full h-full object-cover rounded-full"
+            />
           </div>
         </div>
         <h3 className="text-xl font-semibold text-white mb-2">{name}</h3>
@@ -275,6 +279,7 @@ const AboutUs: React.FC = () => {
     {
       name: "Alex Chen",
       role: "Founder & CEO",
+      image: "/avatar-1.jpeg",
       description:
         "Blockchain architect with 8+ years in DeFi and tokenomics. Former Ethereum core developer.",
       social: { twitter: "#", linkedin: "#", github: "#" },
@@ -282,6 +287,7 @@ const AboutUs: React.FC = () => {
     {
       name: "Sarah Johnson",
       role: "CTO",
+      image: "/avatar-2.jpeg",
       description:
         "Full-stack developer specializing in Web3 applications and smart contract security.",
       social: { twitter: "#", linkedin: "#", github: "#" },
@@ -289,6 +295,7 @@ const AboutUs: React.FC = () => {
     {
       name: "Marcus Rodriguez",
       role: "Lead Developer",
+      image: "/avatar-3.jpeg",
       description:
         "Solidity expert and smart contract auditor with extensive DeFi protocol experience.",
       social: { twitter: "#", linkedin: "#", github: "#" },
@@ -296,6 +303,7 @@ const AboutUs: React.FC = () => {
     {
       name: "Emily Watson",
       role: "Product Manager",
+      image: "/avatar-1.jpeg",
       description:
         "UX/UI specialist focused on making complex blockchain technology accessible to everyone.",
       social: { twitter: "#", linkedin: "#", github: "#" },

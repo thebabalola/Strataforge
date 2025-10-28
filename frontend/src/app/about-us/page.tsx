@@ -277,36 +277,20 @@ const AboutUs: React.FC = () => {
 
   const team = [
     {
-      name: "Alex Chen",
-      role: "Founder & CEO",
-      image: "/avatar-1.jpeg",
+      name: "Rebirth",
+      role: "Co-Founder & Developer",
+      image: "https://unavatar.io/twitter/_therebirth",
       description:
-        "Blockchain architect with 8+ years in DeFi and tokenomics. Former Ethereum core developer.",
-      social: { twitter: "#", linkedin: "#", github: "#" },
+        "Blockchain enthusiast and Web3 developer passionate about democratizing access to blockchain technology.",
+      social: { twitter: "https://x.com/_therebirth", linkedin: "#", github: "#" },
     },
     {
-      name: "Sarah Johnson",
-      role: "CTO",
-      image: "/avatar-2.jpeg",
+      name: "Philip Gbangbola",
+      role: "Co-Founder & Developer",
+      image: "https://unavatar.io/twitter/gbangbolaphilip",
       description:
-        "Full-stack developer specializing in Web3 applications and smart contract security.",
-      social: { twitter: "#", linkedin: "#", github: "#" },
-    },
-    {
-      name: "Marcus Rodriguez",
-      role: "Lead Developer",
-      image: "/avatar-3.jpeg",
-      description:
-        "Solidity expert and smart contract auditor with extensive DeFi protocol experience.",
-      social: { twitter: "#", linkedin: "#", github: "#" },
-    },
-    {
-      name: "Emily Watson",
-      role: "Product Manager",
-      image: "/avatar-1.jpeg",
-      description:
-        "UX/UI specialist focused on making complex blockchain technology accessible to everyone.",
-      social: { twitter: "#", linkedin: "#", github: "#" },
+        "Full-stack developer and blockchain specialist focused on building innovative no-code solutions for Web3.",
+      social: { twitter: "https://x.com/gbangbolaphilip", linkedin: "#", github: "#" },
     },
   ];
 
@@ -473,7 +457,7 @@ const AboutUs: React.FC = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
             {team.map((member, index) => (
               <TeamMember key={index} {...member} />
             ))}

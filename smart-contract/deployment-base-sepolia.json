@@ -1,17 +1,17 @@
 {
-  "network": "Base Sepolia",
-  "chainId": 84532,
-  "deployer": "0x0eE1F2b663547dAa487F57C517C7563AdCf86da0",
-  "contracts": {
-    "StrataForgeAdmin": "0x2226ABe4960412F5ad5d0e0d90810243b310ddB1",
-    "StrataForgeERC20Implementation": "0x47e061644AD652b17E234152F38576C93385E56e",
-    "StrataForgeERC721Implementation": "0x84E1dd60D72f87391cdf254eB6B7762B41c9c0ED",
-    "StrataForgeERC1155Implementation": "0xbaDb13B071A6Df12228266a44655110ef5037978",
-    "StrataForgeMemecoinImplementation": "0x06A6020C3D3318E5A2230E3eD1b180539A74b203",
-    "StrataForgeStablecoinImplementation": "0xBE5d6BB1961f454fEF1bEe1c6a4B74F5F589E3De",
-    "StrataForgeProxyFactory": "0xCA4530f667e74B2F8f0E55f396E22AB7c515822d",
-    "StrataForgeFactory": "0x17B1A783200AEE500054F3F406660c2d0E7ed03B",
-    "StrataForgeAirdropFactory": "0x1685308B23D7300041Fb31e7Ca27bBd6a3693F5c"
-  },
-  "deploymentDate": "2025-10-26T00:00:00.000Z"
+	"network": "Base Sepolia",
+	"chainId": 84532,
+	"deployer": "0x0eE1F2b663547dAa487F57C517C7563AdCf86da0",
+	"contracts": {
+		"StrataForgeAdmin": "0x65F4661e7d4d06a30b945DFE2B2321B364Df4fb7",
+		"StrataForgeERC20Implementation": "0x5805C7d8FdB0CF3A49B1e178B2a83E9f83dfc1Dc",
+		"StrataForgeERC721Implementation": "0xb7c594bAd00D69B287C9C99a4e48977a8ACdaC8d",
+		"StrataForgeERC1155Implementation": "0x5fefd923D12fc4C1194D63D3F787077F33B3dCfE",
+		"StrataForgeMemecoinImplementation": "0xa1D6aEfd9DcB01b40BCCE1EF2398Eb127E2c8EcE",
+		"StrataForgeStablecoinImplementation": "0x4023E9A61b20e096A4a8c6C994ad455ce67F8f11",
+		"StrataForgeProxyFactory": "0x735722bF9B6e5A2dF5CB542E27759dddD1a12F33",
+		"StrataForgeFactory": "0x746165B6Cf471942611c299e6eC426a70AB4D20b",
+		"StrataForgeAirdropFactory": "0x3b4ab42149BcA8A7340223fee67D9112Cb8494dd"
+	},
+	"deploymentDate": "2025-10-27T23:27:45.691Z"
 }

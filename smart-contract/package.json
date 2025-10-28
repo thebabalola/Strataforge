@@ -4,7 +4,8 @@
   "description": "hardhat-tutorial",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "verify": "hardhat run scripts/verify-strataforge-temp.ts --network base-sepolia"
   },
   "author": "",
   "license": "ISC",

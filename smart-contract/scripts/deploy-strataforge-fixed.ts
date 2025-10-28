@@ -15,6 +15,7 @@ async function main() {
   }
 
   console.log("Deploying contracts to Base Sepolia with account:", deployer.address);
+  // console.log("Deploying contracts to Base Mainnet with account:", deployer.address);
   
   const balance = await ethers.provider.getBalance(deployer.address);
   console.log("Account balance:", ethers.formatEther(balance), "ETH");
@@ -173,12 +174,31 @@ async function main() {
     deploymentDate: new Date().toISOString(),
   };
 
+  // const deploymentInfo = {
+  //   network: "Base Mainnet",
+  //   chainId: 8453,
+  //   deployer: deployer.address,
+  //   contracts: {
+  //     StrataForgeAdmin: adminAddress,
+  //     StrataForgeERC20Implementation: erc20Address,
+  //     StrataForgeERC721Implementation: erc721Address,
+  //     StrataForgeERC1155Implementation: erc1155Address,
+  //     StrataForgeMemecoinImplementation: memecoinAddress,
+  //     StrataForgeStablecoinImplementation: stablecoinAddress,
+  //     StrataForgeProxyFactory: proxyFactoryAddress,
+  //     StrataForgeFactory: factoryAddress,
+  //     StrataForgeAirdropFactory: airdropAddress,
+  //   },
+  //   deploymentDate: new Date().toISOString(),
+  // };
+
   const deploymentPath = path.join(__dirname, "../deployment-base-sepolia.json");
   fs.writeFileSync(deploymentPath, JSON.stringify(deploymentInfo, null, 2));
   console.log("\nDeployment info saved to:", deploymentPath);
 
   console.log("\n=== Deployment Summary ===");
   console.log("Network: Base Sepolia (84532)");
+  // console.log("Network: Base Mainnet (8453)");
   console.log("Deployer:", deployer.address);
   console.log("\nContract Addresses:");
   console.log("├── StrataForgeAdmin:", adminAddress);
@@ -191,8 +211,50 @@ async function main() {
   console.log("├── StrataForgeFactory:", factoryAddress);
   console.log("└── StrataForgeAirdropFactory:", airdropAddress);
 
+  // Save to temp.json (for verification script)
+  const deploymentData = {
+    network: "Base Sepolia",
+    chainId: 84532,
+    deployer: deployer.address,
+    contracts: {
+      StrataForgeAdmin: adminAddress,
+      StrataForgeERC20Implementation: erc20Address,
+      StrataForgeERC721Implementation: erc721Address,
+      StrataForgeERC1155Implementation: erc1155Address,
+      StrataForgeMemecoinImplementation: memecoinAddress,
+      StrataForgeStablecoinImplementation: stablecoinAddress,
+      StrataForgeProxyFactory: proxyFactoryAddress,
+      StrataForgeFactory: factoryAddress,
+      StrataForgeAirdropFactory: airdropAddress
+    },
+    deploymentDate: new Date().toISOString()
+  };
+
+  // const deploymentData = {
+  //   network: "Base Mainnet",
+  //   chainId: 8453,
+  //   deployer: deployer.address,
+  //   contracts: {
+  //     StrataForgeAdmin: adminAddress,
+  //     StrataForgeERC20Implementation: erc20Address,
+  //     StrataForgeERC721Implementation: erc721Address,
+  //     StrataForgeERC1155Implementation: erc1155Address,
+  //     StrataForgeMemecoinImplementation: memecoinAddress,
+  //     StrataForgeStablecoinImplementation: stablecoinAddress,
+  //     StrataForgeProxyFactory: proxyFactoryAddress,
+  //     StrataForgeFactory: factoryAddress,
+  //     StrataForgeAirdropFactory: airdropAddress
+  //   },
+  //   deploymentDate: new Date().toISOString()
+  // };
+
+  const tempPath = path.join(__dirname, "../temp.json");
+  fs.writeFileSync(tempPath, JSON.stringify(deploymentData, null, 2));
+  console.log("\n✓ Deployment addresses saved to temp.json");
+
   console.log("\n✓ Deployment completed successfully!");
   console.log("\nBlock Explorer: https://sepolia.basescan.org");
+  // console.log("\nBlock Explorer: https://basescan.org");
 }
 
 main()

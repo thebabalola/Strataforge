@@ -282,7 +282,11 @@ const AboutUs: React.FC = () => {
       image: "https://unavatar.io/twitter/_therebirth",
       description:
         "Blockchain enthusiast and Web3 developer passionate about democratizing access to blockchain technology.",
-      social: { twitter: "https://x.com/_therebirth", linkedin: "#", github: "#" },
+      social: {
+        twitter: "https://x.com/_therebirth",
+        linkedin: "#",
+        github: "#",
+      },
     },
     {
       name: "Philip Gbangbola",
@@ -290,7 +294,11 @@ const AboutUs: React.FC = () => {
       image: "https://unavatar.io/twitter/gbangbolaphilip",
       description:
         "Full-stack developer and blockchain specialist focused on building innovative no-code solutions for Web3.",
-      social: { twitter: "https://x.com/gbangbolaphilip", linkedin: "#", github: "#" },
+      social: {
+        twitter: "https://x.com/gbangbolaphilip",
+        linkedin: "#",
+        github: "#",
+      },
     },
   ];
 
@@ -498,7 +506,7 @@ const AboutUs: React.FC = () => {
               </h3>
               <p className="text-gray-400">
                 Every smart contract is audited and tested. We prioritize
-                security in every aspect of our platform.
+                security in every aspect of our Platform.
               </p>
             </div>
 
